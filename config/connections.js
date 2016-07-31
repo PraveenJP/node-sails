@@ -45,7 +45,7 @@ module.exports.connections = {
     host: 'localhost',
     user: 'root', //optional
     password: 'jproadiz007', //optional
-    database: 'srm_system' //optional
+    database: 'demo' //optional
   },
 
   /***************************************************************************
