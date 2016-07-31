@@ -8,15 +8,17 @@
 		<th></th>
 		<th></th>
 		<th></th>
+		<th><a href="/customer/new/">Add</a></th>
 	</tr> 
 	<% _.each(customer, function(customer){ %>
 	<tr>
 		<td><%= customer.id %></td>
 		<td><%= customer.name %></td>
-		<td><%= customer.email %></td>
+		<td><%= customer.email %></td>		
 		<td><a href="/customer/show/<%= customer.id %>">Show</a></td>
 		<td><a href="/customer/edit/<%= customer.id %>">Edit</a></td>
-		<td><a href="/customer/delete/<%= customer.id %>">Delete</a></td>
+		<td><a href="/customer/destroy/<%= customer.id %>">Delete</a></td>
+		<td></td>
 	</tr>
 	<% }) %>
 </table>
