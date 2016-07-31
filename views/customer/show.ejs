@@ -2,6 +2,28 @@
 <hr>
 <h3>Email: <%= customer.email %></h3>
 <h3>State: <%= customer.state %></h3>
+<hr>
+<h1>Stocks</h1>
+<table>
+	<tr>
+		<th>Symbol</th>
+		<th>Number of shares</th>
+		<th>Current Price</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% _.each(customer.stocks, function(stock){ %>
+	<tr data-id="<%= stock.id %>" data-model="stock">
+		<td><%= stock.symbol %></td>
+		<td><%= stock.number_of_shares %></td>
+		<td></td>
+		<td><a href="/stock/show/<%= stock.id %>">Show</a></td>
+		<td><a href="/stock/edit/<%= stock.id %>">Edit</a></td>
+		<td><a href="/stock/destroy/<%= stock.id %>">Delete</a></td>
+	</tr>
+	<% }); %>
+</table>
 
 <form action="/stock/new" mathod="post">
 	<input type="hidden" value="<%= customer.id %>" name="owner" />

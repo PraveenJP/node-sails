@@ -29,7 +29,8 @@ module.exports = {
 	},
 
 	show: function(req, res, next){
-		Customer.findOne(req.param('id'), function foundCustomer(err, customer){
+		//Customer.findOne(req.param('id'), function foundCustomer(err, customer){
+		Customer.findOne(req.param('id')).populateAll().exec(function(err,customer){
 			if(err) return next(err);
 			if(!customer) return next();
 			res.view({
